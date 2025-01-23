@@ -13,7 +13,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route Component={DefaultLayout}>
-          <Route path="/" Component={HomePage} />
+          <Route path="/home" Component={HomePage} />
           <Route path="/articoli" Component={PostsPage} />
           <Route path="/chi-siamo" Component={AboutPage} />
           <Route path="/contatti" Component={ContactsPage} />
