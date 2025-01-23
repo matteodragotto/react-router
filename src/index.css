@@ -21,3 +21,22 @@ header {
   border-radius: 20px;
   color: black;
 }
+
+.h {
+  height: 600px;
+}
+
+.text-overflow {
+  overflow: auto;
+}
+
+.card-body {
+  position: relative;
+
+  .btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+
+  }
+}

@@ -10,4 +10,3 @@ Creiamo il frontend del nostro Blog e le sue pagine!
 Centralizzare la Navbar grazie a un Layout
 Gestire la classe active
 Stampare il menu dinamicamente
-etc etc.. :occhiolino:
