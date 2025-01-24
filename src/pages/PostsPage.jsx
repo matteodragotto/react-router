@@ -21,17 +21,6 @@ const PostsPage = () => {
 
   }
 
-  const deletePostHandler = (id) => {
-    axios.delete(`${postApiUrl}/posts/${id}`)
-      .then(res => {
-        fetchPosts()
-      })
-      .catch(error => {
-        console.error('Non è stato possibile cancellare il post:', error)
-      })
-
-  }
-
   useEffect(() => {
     fetchPosts()
   }, [])

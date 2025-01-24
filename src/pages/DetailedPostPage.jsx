@@ -25,6 +25,7 @@ const DetailedPostPage = () => {
     axios.delete(`${postApiUrl}/posts/${id}`)
       .then(res => {
         fetchPost()
+        navigate('/articoli')
       })
       .catch(error => {
         console.error('Non è stato possibile cancellare il post:', error)
@@ -34,7 +35,7 @@ const DetailedPostPage = () => {
 
   useEffect(() => {
     fetchPost()
-  }, [])
+  }, [id])
 
   return (
     <div className="container my-5">
@@ -52,14 +53,21 @@ const DetailedPostPage = () => {
               </p>
               <h6>Tag:</h6>
               <p className="card-text">{post?.tags.join(', ')}</p>
-              <div className="btn btn-danger" onClick={deletePostHandler}>
-                <i className="fa-solid fa-trash-can"></i>
+              <div className="container d-flex justify-content-between">
+                <div className="container">
+                  <button type="button" className="btn btn-primary" onClick={() => navigate(`/post-dettagliato/${post?.id - 1}`)}>Vai al posto precedente</button>
+                  <button type="button" className="btn btn-primary" onClick={() => navigate(`/post-dettagliato/${post?.id + 1}`)}>Vai al posto successivo</button>
+                </div>
+                <div className="btn btn-danger" onClick={deletePostHandler}>
+                  <i className="fa-solid fa-trash-can"></i>
+                </div>
+
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 
