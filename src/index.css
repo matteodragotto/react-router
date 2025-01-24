@@ -9,15 +9,15 @@ body {
 }
 
 header {
-  background-color: navy;
+  background-color: mediumspringgreen;
 }
 
 .nav-link {
-  color: white;
+  color: black;
 }
 
 .active {
-  background-color: aqua;
+  background-color: white;
   border-radius: 20px;
   color: black;
 }

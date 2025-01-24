@@ -4,7 +4,10 @@ import HomePage from "./pages/HomePage"
 import PostsPage from "./pages/PostsPage"
 import AboutPage from "./pages/AboutPage"
 import ContactsPage from "./pages/ContactsPage"
+import AddPost from "./pages/AddPost"
+import DetailedPostPage from "./pages/DetailedPostPage"
 import DefaultLayout from "./layouts/DefaultLayout"
+
 
 
 
@@ -17,6 +20,8 @@ const App = () => {
           <Route path="/articoli" Component={PostsPage} />
           <Route path="/chi-siamo" Component={AboutPage} />
           <Route path="/contatti" Component={ContactsPage} />
+          <Route path='/aggiungi-post' Component={AddPost} />
+          <Route path='/post-dettagliato' Component={DetailedPostPage} />
         </Route>
       </Routes>
     </BrowserRouter>

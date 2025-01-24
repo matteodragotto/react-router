@@ -1,10 +1,11 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, Link } from "react-router-dom"
 
 const menuLinks = [
   { id: 1, path: '/', name: 'Home' },
   { id: 2, path: '/articoli', name: 'Articoli' },
   { id: 3, path: '/chi-siamo', name: 'Chi siamo' },
-  { id: 4, path: '/contatti', name: 'Contatti' }
+  { id: 4, path: '/contatti', name: 'Contatti' },
+  { id: 5, path: '/aggiungi-post', name: 'Aggiungi post' },
 ]
 
 const NavMenu = () => {
