@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom"
 
 const menuLinks = [
-  { id: 1, name: 'home' },
-  { id: 2, name: 'articoli' },
-  { id: 3, name: 'chi-siamo' },
-  { id: 4, name: 'contatti' }
+  { id: 1, path: '/', name: 'Home' },
+  { id: 2, path: '/articoli', name: 'Articoli' },
+  { id: 3, path: '/chi-siamo', name: 'Chi siamo' },
+  { id: 4, path: '/contatti', name: 'Contatti' }
 ]
 
 const NavMenu = () => {
@@ -13,7 +13,7 @@ const NavMenu = () => {
       <ul className="nav">
         {menuLinks.map(link => (
           <li key={link.id} className="nav-item">
-            <NavLink to={link.name} className="nav-link">{link.name.toUpperCase()}</NavLink>
+            <NavLink to={link.path} className="nav-link">{link.name}</NavLink>
           </li>
         ))}
       </ul>
