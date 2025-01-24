@@ -1,5 +1,6 @@
 import { useState } from "react"
 import axios from "axios"
+import { useNavigate } from "react-router-dom"
 
 const AddPost = () => {
   const postApiUrl = 'http://localhost:3001'
@@ -11,6 +12,7 @@ const AddPost = () => {
     tags: ''
   }
 
+  const navigate = useNavigate()
   const [formData, setFormData] = useState(basicPostForm)
 
   const changeHandler = (e) => {
@@ -30,8 +32,8 @@ const AddPost = () => {
 
     axios.post(`${postApiUrl}/posts`, newPost)
       .then(res => {
-        setPosts(res.data)
         setFormData(basicPostForm)
+        navigate('/articoli')
       })
       .catch(error => {
         console.error('Non è stato possibile aggiungere il post:', error)
