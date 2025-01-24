@@ -21,3 +21,8 @@ header {
   border-radius: 20px;
   color: black;
 }
+
+img {
+  width: 450px;
+  height: 360px;
+}

@@ -8,6 +8,7 @@ const DetailedPostPage = () => {
   const postApiUrl = 'http://localhost:3001'
   const navigate = useNavigate()
   const [post, setPost] = useState(null)
+  const [showButton, setShowButton] = useState(true)
 
   const fetchPost = () => {
     axios.get(`${postApiUrl}/posts/${id}`)
@@ -33,18 +34,26 @@ const DetailedPostPage = () => {
 
   }
 
+  const goNext = () => {
+    navigate(`/post-dettagliato/${post?.id + 1}`)
+  }
+
+  const goPrev = () => {
+    navigate(`/post-dettagliato/${post?.id - 1}`)
+  }
+
+
   useEffect(() => {
     fetchPost()
   }, [id])
 
   return (
     <div className="container my-5">
-      <h1 className="text-center">Il mio blog</h1>
       <div className="row">
         <div className="col-12" key={post?.id}>
-          <div className="card my-2">
-            <img src={post?.image} alt={post?.title} />
-            <div className="card-body text-overflow">
+          <div className="card d-flex flex-row my-2">
+            <img className="img-fluid" src={post?.image} alt={post?.title} />
+            <div className="card-body w-70 text-overflow">
               <h5 className="card-text">
                 {post?.title}
               </h5>
@@ -55,8 +64,8 @@ const DetailedPostPage = () => {
               <p className="card-text">{post?.tags.join(', ')}</p>
               <div className="container d-flex justify-content-between">
                 <div className="container">
-                  <button type="button" className="btn btn-primary" onClick={() => navigate(`/post-dettagliato/${post?.id - 1}`)}>Vai al posto precedente</button>
-                  <button type="button" className="btn btn-primary" onClick={() => navigate(`/post-dettagliato/${post?.id + 1}`)}>Vai al posto successivo</button>
+                  <button type="button" className="btn btn-primary m-1" onClick={goPrev}>Vai all'articolo precedente</button>
+                  <button type="button" className="btn btn-primary m-1" onClick={goNext}> Vai all'articolo successivo</button>
                 </div>
                 <div className="btn btn-danger" onClick={deletePostHandler}>
                   <i className="fa-solid fa-trash-can"></i>
