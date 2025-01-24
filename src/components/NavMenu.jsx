@@ -1,4 +1,4 @@
-import { NavLink, Link } from "react-router-dom"
+import { NavLink, } from "react-router-dom"
 
 const menuLinks = [
   { id: 1, path: '/', name: 'Home' },

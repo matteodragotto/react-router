@@ -21,7 +21,7 @@ const App = () => {
           <Route path="/chi-siamo" Component={AboutPage} />
           <Route path="/contatti" Component={ContactsPage} />
           <Route path='/aggiungi-post' Component={AddPost} />
-          <Route path='/post-dettagliato' Component={DetailedPostPage} />
+          <Route path='/post-dettagliato/:id' Component={DetailedPostPage} />
         </Route>
       </Routes>
     </BrowserRouter>
